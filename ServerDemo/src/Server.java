@@ -3,15 +3,13 @@ import java.net.*;
 import java.util.ArrayList;
 
 public class Server {
-
-	public static ArrayList<Socket> socL = new ArrayList<Socket>();
-	public static ArrayList<String> nameL = new ArrayList<String>();
+	
 	public int port;//port number
 	public Server() {
 		port = 8802;//set the port num to 8802
 	}
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {//main method for the server, must be started before you start that of the clients
 		Server srv = new Server();
 		srv.run();
 
