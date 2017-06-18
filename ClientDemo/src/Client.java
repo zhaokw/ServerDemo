@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Client {
 
 	public int serverPort;//port number
-	public String ipAdr;//IP address for the server
+	public String ipAdr;//IP address for the client
 	public Socket soc = null;
 	public BufferedReader br = null;
 	public PrintStream ps = null;
 	public Client(String ipAdr) {
-		serverPort = 8802;//set the port number to 8802 by default
+		serverPort = 8802;//set the port number to 8802
 		this.ipAdr = ipAdr;
 	}
 
-	public static void main(String[] args) throws Exception {//main method for server, must betsrated before you start the clients' main
+	public static void main(String[] args) throws Exception {//main method for client, must bet started after you start the server's' main
 		System.out.println("please type in the server's IP:");//get server IP from user input
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
@@ -22,13 +22,13 @@ public class Client {
 		c.run();
 	}
 
-	public BufferedReader getReader(Socket soc) throws Exception {//makes up a buffer reader to read from the client
+	public BufferedReader getReader(Socket soc) throws Exception {//makes up a buffer reader to read from the server
 		InputStreamReader ipsr = new InputStreamReader(soc.getInputStream());
 		BufferedReader br = new BufferedReader(ipsr);
 		return br;
 	}
 
-	public PrintStream getWriter(Socket soc) throws Exception {//makes up a print stream to respond the client
+	public PrintStream getWriter(Socket soc) throws Exception {//makes up a print stream to respond the server
 		PrintStream ps = new PrintStream(soc.getOutputStream());
 		return ps;
 	}
