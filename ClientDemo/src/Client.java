@@ -44,7 +44,7 @@ public class Client {
 		while (!(input.equals("bye"))) {
 			// send user id to the server
 			System.out.println("");
-			System.out.println("If you want the server to return 1, type in 'a', if you want 2, type in 'b', press any other key to get a 3");
+			System.out.println("If you want the server to return 1, type in 'a', if you want 2, type in 'b', press any other key to get a 3, and type 'bye' to exit");
 			Scanner scn = new Scanner(System.in);
 			input = scn.nextLine();
 			ps.println(input);
